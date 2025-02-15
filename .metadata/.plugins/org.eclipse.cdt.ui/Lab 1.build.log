@@ -1,0 +1,7 @@
+15:28:37 **** Incremental Build of configuration Debug for project Lab 1 ****
+make -j8 all 
+Drivers/STM32F3xx_HAL_Driver/Src/subdir.mk:67: *** unable to generate command line.  Stop.
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+15:28:37 Build Failed. 1 errors, 0 warnings. (took 283ms)
+

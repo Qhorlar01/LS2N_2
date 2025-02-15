@@ -1,0 +1,18 @@
+16:20:06 **** Build of configuration Debug for project lab3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'setup':
+../Core/Src/main.c:79:20: error: 'TIM7_DAC1_IRQn' undeclared (first use in this function); did you mean 'TIM7_DAC2_IRQn'?
+   79 |     NVIC_EnableIRQ(TIM7_DAC1_IRQn);
+      |                    ^~~~~~~~~~~~~~
+      |                    TIM7_DAC2_IRQn
+../Core/Src/main.c:79:20: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'TIM6_DAC1_IRQHandler':
+../Core/Src/main.c:94:9: warning: implicit declaration of function 'wait' [-Wimplicit-function-declaration]
+   94 |         wait(); //to make sure the device detects our output signal
+      |         ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+16:20:07 Build Failed. 2 errors, 1 warnings. (took 1s.122ms)
+

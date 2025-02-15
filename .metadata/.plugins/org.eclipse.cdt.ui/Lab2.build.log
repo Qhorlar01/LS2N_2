@@ -1,0 +1,24 @@
+12:50:01 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'stepCCW':
+../Core/Src/main.c:63:41: error: 'seq' undeclared (first use in this function)
+   63 |              GPIOA->ODR = (GPIOA->ODR | seq[i] << 5) & ~((~seq[i] & 0x0F) << 5);
+      |                                         ^~~
+../Core/Src/main.c:63:41: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:11: error: 'step' undeclared (first use in this function)
+  123 |           step = 0;
+      |           ^~~~
+../Core/Src/main.c:124:11: warning: implicit declaration of function 'stepCCW' [-Wimplicit-function-declaration]
+  124 |           stepCCW(step);
+      |           ^~~~~~~
+At top level:
+../Core/Src/main.c:58:17: warning: 'stepCCW' defined but not used [-Wunused-function]
+   58 |            void stepCCW(int8_t i)
+      |                 ^~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+12:50:02 Build Failed. 3 errors, 2 warnings. (took 421ms)
+

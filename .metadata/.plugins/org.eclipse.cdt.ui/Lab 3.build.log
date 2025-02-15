@@ -1,0 +1,30 @@
+12:58:14 **** Incremental Build of configuration Debug for project Lab 3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'setup':
+../Core/Src/main.c:44:28: error: 'ox1' undeclared (first use in this function)
+   44 |         RCC->APB1RSTR &= ~(ox1<<4);
+      |                            ^~~
+../Core/Src/main.c:44:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'EXTI15_10_IRQHandler':
+../Core/Src/main.c:117:45: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
+  117 |             if ((GPIOA->IDR & (0x01 << 10)) == 1)
+      |                                             ^~
+../Core/Src/main.c:130:17: error: 'measure' undeclared (first use in this function)
+  130 |                 measure = TIM7->CNT;     // Store measure value
+      |                 ^~~~~~~
+../Core/Src/main.c:134:17: error: 'obstacle' undeclared (first use in this function)
+  134 |                 obstacle = 1;
+      |                 ^~~~~~~~
+../Core/Src/main.c:133:21: warning: unused variable 'distance_mm' [-Wunused-variable]
+  133 |                 int distance_mm = (int)(measure * 17.24);  // Convert measure to mm
+      |                     ^~~~~~~~~~~
+../Core/Src/main.c: In function 'TIM7_DAC2_IRQHandler':
+../Core/Src/main.c:145:13: error: 'obstacle' undeclared (first use in this function)
+  145 |             obstacle = 0;              // Reset obstacle status
+      |             ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+12:58:14 Build Failed. 5 errors, 2 warnings. (took 435ms)
+
