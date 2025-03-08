@@ -1,6 +1,6 @@
 # Embedded Systems Labs: Ultrasonic Sensor & PWM Power Control
 
-![GitHub](https://img.shields.io/github/license/yourusername/repo-name?color=blue)
+![GitHub](https://img.shields.io/github/license/https://github.com/Qhorlar01/LS2N_2.git=blue)
 ![STM32](https://img.shields.io/badge/STM32-F303x8-blue)
 ![IDE](https://img.shields.io/badge/IDE-STM32CubeIDE-green)
 
@@ -59,7 +59,3 @@ This lab demonstrates PWM generation, interrupt-driven duty cycle variation, and
 | PWM Signal (Active High) | Dead-Time Measurement |
 |--------------------------|-----------------------|
 | ![PWM 10kHz](high.png) | ![Dead-Time](deadTime.png) |
-
----
-
-## Repository Structure
