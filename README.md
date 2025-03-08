@@ -1,6 +1,5 @@
-# Embedded Systems Labs: Ultrasonic Sensor & PWM Power Control
+# Ultrasonic Sensor & PWM Power Control
 
-![GitHub](https://img.shields.io/github/license/https://github.com/Qhorlar01/LS2N_2.git=blue)
 ![STM32](https://img.shields.io/badge/STM32-F303x8-blue)
 ![IDE](https://img.shields.io/badge/IDE-STM32CubeIDE-green)
 
